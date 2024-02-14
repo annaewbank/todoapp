@@ -1,3 +1,5 @@
-export default function TaskCard() {
-  return <h2>Task Card works</h2>;
+import "./task-card.css";
+
+export default function TaskCard({task}) {
+  return <p className="task-card">{task.title}</p>;
 }

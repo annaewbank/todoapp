@@ -1,3 +1,10 @@
-export default function TaskList() {
-  return <h2>Task List works</h2>;
+import TaskCard from "../task-card/task-card";
+import "./task-list.css";
+
+export default function TaskList({taskList}) {
+  return(
+    <>
+    {taskList.map(task => <TaskCard task={task} key={task.id}/>)}
+    </>
+  );
 }
