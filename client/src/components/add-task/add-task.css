@@ -1,0 +1,6 @@
+.add-task {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+}
+

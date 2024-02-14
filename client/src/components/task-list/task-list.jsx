@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import TaskCard from "../task-card/task-card";
 import "./task-list.css";
 

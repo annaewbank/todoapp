@@ -7,7 +7,7 @@ export async function getAllTasks() {
 
 export async function addTask(task) {
   const response = await fetch(rootURL, {
-    method: POST,
+    method: "POST",
     headers: {
       "content-type": "application/json",
     },
