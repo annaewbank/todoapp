@@ -1,8 +1,15 @@
-const Task = require('../models/model');
+const Task = require("../models/model");
 
-function getAllTasks(req, res) {
+async function getAllTasks(req, res) {
   try {
-  } catch (error) {}
+    const allTasks = await Task.findAll();
+    console.log(allTasks);
+    res.status(200);
+    res.send(allTasks);
+    // res.status(200).json(await Task.findAll()); // 1 LINE SICK VERSION
+  } catch (error) {
+    res.status(500);
+  }
 }
 
 async function addTask(req, res) {
