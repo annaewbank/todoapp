@@ -1,6 +1,18 @@
 .add-task {
-  display: flex;
   padding: 1rem;
-  flex-direction: column;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input {
+  padding: 1rem;
+  border: 5px solid rgb(0, 0, 0);
+}
+
+button {
+ padding: 5rem;
+}

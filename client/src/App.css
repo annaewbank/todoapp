@@ -13,4 +13,6 @@
 .task-list {
   background-color: white;
   flex-grow: 3;
+  overflow-y: scroll;
 }
+
