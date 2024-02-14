@@ -1,8 +1,19 @@
-const model = require("../models/model");
+const Task = require('../models/model');
 
-function getAllTasks() {}
+function getAllTasks(req, res) {
+  try {
+  } catch (error) {}
+}
 
-function addTask() {}
+async function addTask(req, res) {
+  try {
+    const newTask = await Task.create(await req.body);
+    res.status(201);
+    res.send(newTask);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 function completeTask() {}
 

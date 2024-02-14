@@ -4,6 +4,8 @@ const router = require("./router");
 
 const app = new Express();
 
+app.use(Express.json());
+
 app.use(cors());
 app.use(router);
 
