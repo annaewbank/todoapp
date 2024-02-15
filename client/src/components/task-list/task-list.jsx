@@ -2,10 +2,12 @@
 import TaskCard from "../task-card/task-card";
 import "./task-list.css";
 
-export default function TaskList({taskList}) {
-  return(
+export default function TaskList({ taskList, setComplete }) {
+  return (
     <>
-    {taskList.map(task => <TaskCard task={task} key={task.id}/>)}
+      {taskList.map((task, index) => (
+        <TaskCard task={task} key={index} setComplete={setComplete} />
+      ))}
     </>
   );
 }

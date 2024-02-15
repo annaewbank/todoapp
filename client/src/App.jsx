@@ -6,15 +6,16 @@ import { getAllTasks, addTask } from "./api-client";
 
 export default function App() {
   const [taskList, setTaskList] = useState([]);
+  const [complete, setComplete] = useState(false);
 
-  useEffect(()=>{
-    getAllTasks().then(res => {
+  useEffect(() => {
+    getAllTasks().then((res) => {
       setTaskList(res);
-    })
-  }, [])
+    });
+  }, [complete]);
 
   function updateTaskList(task) {
-    addTask(task).then((res) => setTaskList([...taskList, res]))
+    addTask(task).then((res) => setTaskList([...taskList, res]));
   }
 
   return (
@@ -23,7 +24,7 @@ export default function App() {
         <AddTask addTask={updateTaskList} />
       </div>
       <div className="task-list">
-        <TaskList taskList={taskList}/>
+        <TaskList taskList={taskList} setComplete={setComplete} />
       </div>
     </div>
   );

@@ -13,11 +13,19 @@ export async function addTask(task) {
     },
     body: JSON.stringify(task),
   });
+  return await response.json();
 }
 
-  export async function completeTask(id) {
+export async function completeTask(id) {
   const response = await fetch(rootURL + "/" + id + "/completed", {
-    method: "PUT"
+    method: "PUT",
+  });
+  return await response.json();
+}
+
+export async function deleteTask(id) {
+  const response = await fetch(rootURL + "/" + id + "/delete", {
+    method: "DELETE",
   });
   return await response.json();
 }
