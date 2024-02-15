@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const controller = require("./controllers/controller")
+const controller = require("./controllers/controller");
 
 // GET
 router.get("/tasks", controller.getAllTasks);
@@ -8,9 +8,9 @@ router.get("/tasks", controller.getAllTasks);
 router.post("/tasks", controller.addTask);
 
 // PUT
-router.put("/tasks/:id", controller.completeTask);
+router.put("/tasks/:id/completed", controller.completeTask);
 
 // DELETE
-router.delete("/tasks", controller.deleteTask);
+router.delete("/tasks/:id/delete", controller.deleteTask);
 
 module.exports = router;

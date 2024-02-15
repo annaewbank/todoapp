@@ -8,7 +8,7 @@ export default function AddTask({addTask}) {
     deadline: new Date().toISOString().split('T')[0],
     completed: false
   })
-  
+
   function handleAdd(event){
     event.preventDefault();
     addTask(formValues)
@@ -23,11 +23,11 @@ export default function AddTask({addTask}) {
     const {name, value} = event.target;
     setFormValues({...formValues, [name]: value})
   }
-  
+
   return (
     <div className="add-task">
       <form onSubmit={handleAdd}>
-        <input name="title" placeholder="Add Task" type="text" value={formValues.title} onChange={handleChange}/>
+        <input name="title" placeholder="Add Task" type="text" value={formValues.title} onChange={handleChange} required/>
         <input name="deadline" type="date" value={formValues.deadline} onChange={handleChange}/>
         <button>Add</button>
       </form>

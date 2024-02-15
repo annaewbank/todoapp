@@ -13,6 +13,11 @@ export async function addTask(task) {
     },
     body: JSON.stringify(task),
   });
+}
 
+  export async function completeTask(id) {
+  const response = await fetch(rootURL + "/" + id + "/completed", {
+    method: "PUT"
+  });
   return await response.json();
 }

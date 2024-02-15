@@ -3,7 +3,7 @@ const Task = require("../models/model");
 async function getAllTasks(req, res) {
   try {
     const allTasks = await Task.findAll();
-    console.log(allTasks);
+    // console.log(allTasks);
     res.status(200);
     res.send(allTasks);
     // res.status(200).json(await Task.findAll()); // 1 LINE SICK VERSION
@@ -22,8 +22,29 @@ async function addTask(req, res) {
   }
 }
 
-function completeTask() {}
+async function completeTask(req, res) {
+  try {
+    const id = req.params.id;
+    const task = await Task.findByPk(id);
+    task.completed = true;
+    task.save();
+    res.status(201);
+    res.send(task);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-function deleteTask() {}
+async function deleteTask(req, res) {
+  try {
+    const id = req.params.id;
+    const task = await Task.findByPk(id);
+    task.destroy();
+    res.status(200);
+    res.send("Task deleted");
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 module.exports = { getAllTasks, addTask, completeTask, deleteTask };
