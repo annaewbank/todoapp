@@ -3,9 +3,10 @@ import TaskCard from "../task-card/task-card";
 import "./task-list.css";
 
 export default function TaskList({ taskList, setComplete }) {
+
   return (
     <>
-      {taskList.map((task, index) => (
+      {taskList.sort((a,b)=>a.completed - b.completed).map((task, index) => (
         <TaskCard task={task} key={index} setComplete={setComplete} />
       ))}
     </>

@@ -1,9 +1,10 @@
 .task-card {
-  background-color: lightblue;
+  background-color: rgb(240, 181, 181);
   padding: 1rem;
   margin: 1rem;
 }
 
 .task-completed {
   text-decoration: line-through;
+  background-color: rgb(190, 234, 190);
 }
