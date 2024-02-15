@@ -8,7 +8,7 @@ router.get("/tasks", controller.getAllTasks);
 router.post("/tasks", controller.addTask);
 
 // PUT
-router.put("/tasks/:id/completed", controller.completeTask);
+router.put("/tasks/:id/completed", controller.toggleCompleted);
 
 // DELETE
 router.delete("/tasks/:id/delete", controller.deleteTask);

@@ -22,11 +22,11 @@ async function addTask(req, res) {
   }
 }
 
-async function completeTask(req, res) {
+async function toggleCompleted(req, res) {
   try {
     const id = req.params.id;
     const task = await Task.findByPk(id);
-    task.completed = true;
+    task.completed = !task.completed;
     task.save();
     res.status(201);
     res.send(task);
@@ -47,4 +47,4 @@ async function deleteTask(req, res) {
   }
 }
 
-module.exports = { getAllTasks, addTask, completeTask, deleteTask };
+module.exports = { getAllTasks, addTask, toggleCompleted, deleteTask };

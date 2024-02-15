@@ -6,13 +6,20 @@
 }
 
 .add-task {
-  background-color: white;
+  /* background-color: white; */
   flex-grow: 1;
 }
 
 .task-list {
-  background-color: white;
+  /* background-color: white; */
   flex-grow: 3;
   overflow-y: scroll;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
+.wrapper h2 {
+  color: white;
+}

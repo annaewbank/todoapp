@@ -28,8 +28,10 @@ export default function AddTask({addTask}) {
     <div className="add-task">
       <form onSubmit={handleAdd}>
         <input name="title" placeholder="Add Task" type="text" value={formValues.title} onChange={handleChange} required/>
-        <input name="deadline" type="date" value={formValues.deadline} onChange={handleChange}/>
-        <button>Add</button>
+        <div className="date-and-add">
+          <input name="deadline" type="date" value={formValues.deadline} onChange={handleChange}/>
+          <button>Add</button>
+        </div>
       </form>
     </div>
   );

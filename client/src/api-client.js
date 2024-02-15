@@ -16,7 +16,7 @@ export async function addTask(task) {
   return await response.json();
 }
 
-export async function completeTask(id) {
+export async function toggleTaskCompleted(id) {
   const response = await fetch(rootURL + "/" + id + "/completed", {
     method: "PUT",
   });
@@ -27,5 +27,4 @@ export async function deleteTask(id) {
   const response = await fetch(rootURL + "/" + id + "/delete", {
     method: "DELETE",
   });
-  return await response.json();
 }

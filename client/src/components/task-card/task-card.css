@@ -1,10 +1,31 @@
 .task-card {
-  background-color: rgb(240, 181, 181);
+  background-color: white;
   padding: 1rem;
-  margin: 1rem;
+  margin: 1rem 0rem;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.task-completed p {
+  color: white;
 }
 
 .task-completed {
-  text-decoration: line-through;
-  background-color: rgb(190, 234, 190);
+  background-color: rgb(28, 32, 47);
+}
+
+.delete {
+  cursor: pointer;
+  color: rgb(192, 140, 240);
+}
+
+.delete:hover {
+  color: blueviolet;
+}
+
+.date {
+  font-size: 0.7rem;
+  color: gray
 }
